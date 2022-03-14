@@ -9,14 +9,14 @@ from os import path
 ######################### ADD YOUR VALUES HERE #########################################
 
 #Project Symbol
-project_symbol = ""
+project_symbol = 'REPLACE-WITH-COLLECTION-SYMBOL'
 
 #Twitter auth details
-t_bearer_token=''
-t_consumer_key=''
-t_consumer_secret=''
-t_access_token=''
-t_access_token_secret=''
+t_bearer_token='REPLACE'
+t_consumer_key='REPLACE'
+t_consumer_secret='REPLACE'
+t_access_token='REPLACE'
+t_access_token_secret='REPLACE'
 
 #If you are granted a higher TPS from MagicEden
 TPS = 2
