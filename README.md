@@ -1,4 +1,4 @@
-# Responsive-Solana-Sales-Bot
+# Responsive-Solana-Sales-Bot (UNDER CONSTRUCTION)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An improvement to [Solana NFT Sales Bot](https://github.com/WilliamAmbrozic/Solana-NFT-Sales-Bot). This bot utilizes MagicEden's ```GET/collections/:symbol/activities``` API call. This bot responds to sales of a given collection in less than a minute while allowing for NFT image uploading and metadata access through MagicEden's API. 
 
