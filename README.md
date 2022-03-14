@@ -11,6 +11,7 @@
   - [Installing](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Installing-the-Bot)  
   - [Adding Credentials](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Adding-Credentials)
   - [Running](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Running-the-Bot)  
+- [Credit Not Needed](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Twitter-Credit-Not-Needed)
 - [Find Me](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#find-me)
 - [Tip Jar](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Solana-Tip-Jar)
 
@@ -69,6 +70,10 @@ Or recommended with (if you do not want an ssh exit or general exit to halt the 
 ```
 nohup python3 bot.py &
 ```
+
+## Credit Not Needed
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use of this bot for your project is encouraged. No credit is needed. If you find this bot useful and insist on crediting the creator, please add @williamambrozic in the Twitter bio.
 
 ## Find Me
 
