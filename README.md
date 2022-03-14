@@ -11,7 +11,7 @@
   - [Installing](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Installing-the-Bot)  
   - [Adding Credentials](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Adding-Credentials)
   - [Running](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Running-the-Bot)  
-- [Credit Not Needed](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Twitter-Credit-Not-Needed)
+- [Credit Not Needed](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Credit-Not-Needed)
 - [Find Me](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#find-me)
 - [Tip Jar](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Solana-Tip-Jar)
 
