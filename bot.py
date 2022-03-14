@@ -71,8 +71,6 @@ def get_meta_from_mint(mint):
     return response.json()
 
 def send_tweet(api, client, n, meta):
-    print("SALE:", meta['name'] ,"just sold for " + str(n["price"]) + " SOL")
-    print(meta['image'])
     image = requests.get(meta['image']).content
     with open('./tmp.png', 'wb') as handler:
         handler.write(image)
