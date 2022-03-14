@@ -73,6 +73,8 @@ nohup python3 bot.py &
 
 ## Credit Not Needed
 
+[[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use of this bot for your project is encouraged. No credit is needed. If you find this bot useful and insist on crediting the creator, please add @williamambrozic in the Twitter bio.
 
 ## Find Me
