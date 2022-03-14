@@ -111,6 +111,6 @@ while True:
                 send_tweet(api, client, sale, meta)
                 print("Tweeting: 💥" + meta['name'] + " Sold for " + str(sale['price']))
             except:
-                print("ERROR: 💥" + meta['name'] + " Sold for " + str(sale['price']) + " Not Tweeted")
+                print("ERROR: with NFT that Sold for " + str(sale['price']) + " Not Tweeted")
 
     last_sale = activities[0]
