@@ -5,6 +5,7 @@
 ## Contents
 - [Setup](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Setup)  
   - [Installing](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Installing-the-Bot)  
+  - [Adding Credentials](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Adding-Credentials)
   - [Running](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Running-the-Bot)  
 - [Find Me](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#find-me)
 - [Tip Jar](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Solana-Tip-Jar)
@@ -12,6 +13,19 @@
 ## Setup
 
 [[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
+
+## Installing the Bot
+
+[[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
+
+Clone and install Python requirements with
+```
+git clone https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot.git
+cd Responsive-Solana-NFT-Sales-Bot
+pip install -r requirements.txt
+```
+
+## Adding Credentials
 
 ### 1. Insert Your NFT MagicEden Collection Symbol 
 
@@ -37,24 +51,13 @@ t_access_token='REPLACE'
 t_access_token_secret='REPLACE'
 ```
 
-## Installing the Bot
-
-[[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
-
-Clone and install Python requirements with
-```
-git clone https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot.git
-cd Responsive-Solana-NFT-Sales-Bot
-pip install -r requirements.txt
-```
-
 ## Running the Bot
 
 [[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
 
 Run with 
 ```
-Python3 bot.py
+python3 bot.py
 ```
 Or with (If you do not want an exit to halt the bot)
 ```
