@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 ![shot 1](https://imgur.com/OnbyLbV.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A collection's symbol can be found by going to https://magiceden.io/ and searching for your collections marketplace page (click the search bar). Look at the url and copy the text appearing directly after the last dash following "marketplace" as highlighted above. This text is your collection's symbol, this is needed for the bot to know what collection to tweet out. Paste this value in the project_symbol field found at the beginning of **bot.py** as seen below:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A collection's symbol can be found by going to https://magiceden.io/ and searching for your collection's marketplace page (click the search bar). Look at the url and copy the text appearing directly after the last dash following "marketplace" as highlighted above. This text is your collection's symbol, this is needed for the bot to know what collection to tweet out. Paste this value in the project_symbol field found at the beginning of **bot.py** as seen below:
 ```
 project_symbol = 'REPLACE-WITH-COLLECTION-SYMBOL'
 ```
