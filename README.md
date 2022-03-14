@@ -61,7 +61,7 @@ Run with
 ```
 python3 bot.py
 ```
-Or with (If you do not want an exit to halt the bot)
+Or with (if you do not want an exit to halt the bot)
 ```
 nohup python3 bot.py &
 ```
