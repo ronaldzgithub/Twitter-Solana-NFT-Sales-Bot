@@ -1,10 +1,11 @@
-# Responsive-Solana-Sales-Bot
+# Responsive-Solana-Sales-Bot (UNDER CONSTRUCTION)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An improvement to [Solana NFT Sales Bot](github.com/WilliamAmbrozic/Solana-NFT-Sales-Bot). This bot utilizes MagicEden's ```GET/collections/:symbol/activities``` API call. This bot responds to sales of a given collection in less than a minute while allowing for NFT image uploading and metadata access through MagicEdens API. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An improvement to [Solana NFT Sales Bot](https://github.com/WilliamAmbrozic/Solana-NFT-Sales-Bot). This bot utilizes MagicEden's ```GET/collections/:symbol/activities``` API call. This bot responds to sales of a given collection in less than a minute while allowing for NFT image uploading and metadata access through MagicEden's API. 
 
 ## Contents
 - [Setup](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Setup)  
   - [Installing](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Installing-the-Bot)  
+  - [Adding Credentials](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Adding-Credentials)
   - [Running](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Running-the-Bot)  
 - [Find Me](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#find-me)
 - [Tip Jar](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Solana-Tip-Jar)
@@ -13,11 +14,26 @@
 
 [[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
 
+## Installing the Bot
+
+[[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
+
+Clone and install Python requirements with
+```
+git clone https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot.git
+cd Responsive-Solana-NFT-Sales-Bot
+pip install -r requirements.txt
+```
+
+## Adding Credentials
+
+[[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
+
 ### 1. Insert Your NFT MagicEden Collection Symbol 
 
 ![shot 1](https://imgur.com/OnbyLbV.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A collection's symbol can be found by going to https://magiceden.io/ and searching for your collections marketplace page (click the search bar). Look at the url and copy the text appearing directly after the last dash following "marketplace" as highlighted above. This text is your collection's symbol, this is needed for the bot to know what collection to tweet out. Paste this value in the project_symbol field found at the beginning of **bot.py** as seen below:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A collection's symbol can be found by going to https://magiceden.io/ and searching for your collection's marketplace page (click the search bar). Look at the url and copy the text appearing directly after the last dash following "marketplace" as highlighted above. This text is your collection's symbol, this is needed for the bot to know what collection to tweet out. Paste this value in the project_symbol field found at the beginning of **bot.py** as seen below:
 ```
 project_symbol = 'REPLACE-WITH-COLLECTION-SYMBOL'
 ```
@@ -37,19 +53,15 @@ t_access_token='REPLACE'
 t_access_token_secret='REPLACE'
 ```
 
-## Installing the Bot
-
-[[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
-
 ## Running the Bot
 
 [[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
 
 Run with 
 ```
-Python3 bot.py
+python3 bot.py
 ```
-Or with (If you are running through ssh and do not want an exit to halt the bot)
+Or with (if you do not want an exit to halt the bot)
 ```
 nohup python3 bot.py &
 ```
