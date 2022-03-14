@@ -101,7 +101,7 @@ while True:
         sale = activities[count]
         count += 1
 
-        if sale['blockTime'] <= last_sale['blockTime'] or count == len(activities):
+        if sale['signature'] == last_sale['signature'] or count == len(activities):
             break
 
         if sale['type'] == "buyNow":
@@ -109,7 +109,7 @@ while True:
                 meta = get_meta_from_mint(sale['tokenMint'])
                 time.sleep(delay)
                 send_tweet(api, client, sale, meta)
-                print("Tweeting: 💥" + meta['name'] + " Sold for " + str(sale['price']))
+                print("Tweeting: BOOM💥" + meta['name'] + " Sold for " + str(sale['price']))
             except:
                 print("ERROR: with NFT that Sold for " + str(sale['price']) + " Not Tweeted")
 
