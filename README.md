@@ -7,7 +7,7 @@
   - [Installing](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Installing-the-Bot)  
   - [Running](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Running-the-Bot)  
 - [Find Me](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#find-me)
-- [Tip Jar](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Tip-Jar-(SOL))
+- [Tip Jar](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Solana-Tip-Jar)
 
 ## Setup
 
@@ -59,6 +59,6 @@ nohup python3 bot.py &
 - [williamambrozic.info](https://williamambrozic.info)
 - [Twitter](https://twitter.com/WilliamAmbrozic)
 
-## Tip Jar (SOL)
+## Solana Tip Jar
   * wia.sol 
   * 8vU6RfyFDk9WriVgaJohBxqtE86TLtjAR8cPWjdU6zEN
