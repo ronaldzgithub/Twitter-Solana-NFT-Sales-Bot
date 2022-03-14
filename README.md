@@ -59,6 +59,6 @@ nohup python3 bot.py &
 - [williamambrozic.info](https://williamambrozic.info)
 - [Twitter](https://twitter.com/WilliamAmbrozic)
 
-### Tip Jar (SOL)
+## Tip Jar (SOL)
   * wia.sol 
   * 8vU6RfyFDk9WriVgaJohBxqtE86TLtjAR8cPWjdU6zEN
