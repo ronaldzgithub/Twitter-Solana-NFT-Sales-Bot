@@ -27,6 +27,8 @@ pip install -r requirements.txt
 
 ## Adding Credentials
 
+[[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
+
 ### 1. Insert Your NFT MagicEden Collection Symbol 
 
 ![shot 1](https://imgur.com/OnbyLbV.png)
