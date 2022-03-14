@@ -41,6 +41,13 @@ t_access_token_secret='REPLACE'
 
 [[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
 
+Clone and install Python requirements with
+```
+git clone https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot.git
+cd Responsive-Solana-NFT-Sales-Bot
+pip install -r requirements.txt
+```
+
 ## Running the Bot
 
 [[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
@@ -49,7 +56,7 @@ Run with
 ```
 Python3 bot.py
 ```
-Or with (If you are running through ssh and do not want an exit to halt the bot)
+Or with (If you do not want an exit to halt the bot)
 ```
 nohup python3 bot.py &
 ```
