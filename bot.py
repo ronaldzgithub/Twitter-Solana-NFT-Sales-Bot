@@ -102,7 +102,7 @@ while True:
 
     count = 0
 
-    #Checking for all acticity since last activity
+    #Checking for all activity since last activity
     while True:
         sale = activities[count]
         count += 1
