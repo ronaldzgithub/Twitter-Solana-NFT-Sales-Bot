@@ -105,7 +105,7 @@ BOOM💥 SolGod #001 just sold for 50.24 SOL ($5000.37 USD)
 **fiat_currency**: The bot currently supports the following currencies: EUR, USD, CAD, JPY, GPB, AUD, CNY, INR. Change this value to change the currency in which Solana is converted if you choose to output fiat price.
 
 
-## Credit Not Needed
+## No Credit Needed
 
 [[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
 
