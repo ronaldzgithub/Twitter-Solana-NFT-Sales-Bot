@@ -85,5 +85,5 @@ nohup python3 bot.py &
 ## Solana Tip Jar
   * wia.sol 
   * 8vU6RfyFDk9WriVgaJohBxqtE86TLtjAR8cPWjdU6zEN
-## Bitcoin
+### Bitcoin
   * bc1qa7vkam2w4cgw8njqx976ga5ns8egsq3yzxzlrt
