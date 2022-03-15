@@ -26,16 +26,16 @@ nfts_per_call = 500
 safety_delay = 0.05
 delay = 1/TPS + safety_delay
 
-client = tweepy.Client(bearer_token=config['twtter_credentials']['bearer_token'],
-                       consumer_key=config['twtter_credentials']['consumer_key'],
-                       consumer_secret=config['twtter_credentials']['consumer_secret'],
-                       access_token=config['twtter_credentials']['access_token'],
-                       access_token_secret=config['twtter_credentials']['access_token_secret'])
+client = tweepy.Client(bearer_token=config['twitter_credentials']['bearer_token'],
+                       consumer_key=config['twitter_credentials']['consumer_key'],
+                       consumer_secret=config['twitter_credentials']['consumer_secret'],
+                       access_token=config['twitter_credentials']['access_token'],
+                       access_token_secret=config['twitter_credentials']['access_token_secret'])
 
-auth = tweepy.OAuth1UserHandler(config['twtter_credentials']['consumer_key'],
-                        config['twtter_credentials']['consumer_secret'],
-                        config['twtter_credentials']['access_token'],
-                        config['twtter_credentials']['access_token_secret'])
+auth = tweepy.OAuth1UserHandler(config['twitter_credentials']['consumer_key'],
+                        config['twitter_credentials']['consumer_secret'],
+                        config['twitter_credentials']['access_token'],
+                        config['twitter_credentials']['access_token_secret'])
 
 api = tweepy.API(auth)
 
