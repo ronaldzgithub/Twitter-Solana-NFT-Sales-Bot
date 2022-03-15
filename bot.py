@@ -6,17 +6,14 @@ import yfinance as yf
 import os.path
 from os import path
 
-######################### ADD YOUR VALUES HERE #########################################
+######################### GLOBAL DEFINITIONS #########################################
 
-#Project Symbol
-project_symbol = 'REPLACE-WITH-COLLECTION-SYMBOL'
+#Fetching config data
+conf = open("./config/config.json")
+config = json.load(conf)
 
-#Twitter auth details
-t_bearer_token='REPLACE'
-t_consumer_key='REPLACE'
-t_consumer_secret='REPLACE'
-t_access_token='REPLACE'
-t_access_token_secret='REPLACE'
+#List of supported currency
+supported_fiat = ["EUR", "USD", "CAD", "JPY", "GPB", "AUD", "CNY", "INR"]
 
 #If you are granted a higher TPS from MagicEden
 TPS = 2
@@ -24,20 +21,21 @@ TPS = 2
 #NFTs called per API request (MAX 500)
 nfts_per_call = 500
 
-######################### GLOBAL DEFINITIONS #########################################
-
 #This value is added to the delay in case MagicEden thinks we are cutting too close into their TPS
 #If you feel risky lower this value or make it 0
 safety_delay = 0.05
 delay = 1/TPS + safety_delay
 
-client = tweepy.Client(bearer_token=t_bearer_token,
-                       consumer_key=t_consumer_key,
-                       consumer_secret=t_consumer_secret,
-                       access_token=t_access_token,
-                       access_token_secret=t_access_token_secret)
+client = tweepy.Client(bearer_token=config['twtter_credentials']['bearer_token'],
+                       consumer_key=config['twtter_credentials']['consumer_key'],
+                       consumer_secret=config['twtter_credentials']['consumer_secret'],
+                       access_token=config['twtter_credentials']['access_token'],
+                       access_token_secret=config['twtter_credentials']['access_token_secret'])
 
-auth = tweepy.OAuth1UserHandler(t_consumer_key, t_consumer_secret, t_access_token, t_access_token_secret)
+auth = tweepy.OAuth1UserHandler(config['twtter_credentials']['consumer_key'],
+                        config['twtter_credentials']['consumer_secret'],
+                        config['twtter_credentials']['access_token'],
+                        config['twtter_credentials']['access_token_secret'])
 
 api = tweepy.API(auth)
 
@@ -46,15 +44,9 @@ api = tweepy.API(auth)
 
 def initCollections():
     limit = nfts_per_call
-    url = "http://api-mainnet.magiceden.dev/v2/collections/" + project_symbol + "/activities?offset=0&limit=" + str(limit)
+    url = "http://api-mainnet.magiceden.dev/v2/collections/" + config['ME_symbol'] + "/activities?offset=0&limit=" + str(limit)
     response = requests.request("GET", url, headers={}, data={}).json()
     return response
-
-def get_json_data(folder):
-    f = open("./" + folder + "/" + mint_id + '.json')
-    data = json.load(f)
-    data = data[folder]
-    return data
 
 #Fetches the latest Solana price in USD
 def get_current_price(symbol):
@@ -64,28 +56,42 @@ def get_current_price(symbol):
 
 def get_meta_from_mint(mint):
     import requests
-
     url = "http://api-mainnet.magiceden.dev/v2/tokens/" + mint
     response = requests.request("GET", url, headers={}, data={})
-
     return response.json()
 
-def send_tweet(api, client, n, meta):
+#Converts tweet text to config text
+def convert_tweet(sale_data, meta):
+    text = config['tweet_text']
+    text = text.replace("[-f]", "$" + str(round((get_current_price("SOL-" + config['fiat_currency'])*sale_data["price"]), 2)) + " " + config['fiat_currency'])
+    text = text.replace("[-n]", meta['name'])
+    text = text.replace("[-p]", str(sale_data["price"]) + " SOL")
+    text = text.replace("[-o]", str(meta["owner"]))
+    text = text.replace("[-m]", str(meta["mintAddress"]))
+    text = text.replace("[-i]", str(meta["image"]))
+    text = text.replace("[-s]", str(sale_data["source"]))
+    text = text.replace("[-b]", str(sale_data["blockTime"]))
+    return text
+
+def send_tweet(api, client, sale_data, meta):
     image = requests.get(meta['image']).content
     with open('./tmp.png', 'wb') as handler:
         handler.write(image)
     mediaID = api.media_upload("tmp.png")
-    client.create_tweet(text="BOOM💥 " + meta['name'] +" just sold for " + str(n["price"]) + " SOL ($" + str(round((get_current_price("SOL-USD")*n["price"]), 2)) + " USD)", media_ids=[mediaID.media_id])
+    client.create_tweet(text=convert_tweet(sale_data, meta), media_ids=[mediaID.media_id])
 
 
 ######################### DRIVER CODE #########################################
 
+#Checking valid currency
+if config['fiat_currency'] not in supported_fiat:
+    print("INVALID FIAT_CURRENCY: CHECK CONFIG")
 
 #Getting initial state of sales
 activities = initCollections()
 last_sale = activities[0]
 
-print("LISTENING FOR " + project_symbol.upper() + " SALES")
+print("LISTENING FOR " + config['ME_symbol'].upper() + " SALES")
 
 while True:
     try:
@@ -109,7 +115,7 @@ while True:
                 meta = get_meta_from_mint(sale['tokenMint'])
                 time.sleep(delay)
                 send_tweet(api, client, sale, meta)
-                print("Tweeting: BOOM💥" + meta['name'] + " Sold for " + str(sale['price']))
+                print("Tweeting: " + convert_tweet(sale, meta))
             except:
                 print("ERROR: with NFT that Sold for " + str(sale['price']) + " Not Tweeted")
 
