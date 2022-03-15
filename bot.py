@@ -48,7 +48,7 @@ def initCollections():
     response = requests.request("GET", url, headers={}, data={}).json()
     return response
 
-#Fetches the latest Solana price in USD
+#Fetches the latest Solana price in selected currency
 def get_current_price(symbol):
     ticker = yf.Ticker(symbol)
     todays_data = ticker.history(period='1d')
