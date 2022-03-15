@@ -89,7 +89,7 @@ The config file **./config/config.json** will look something like this:
 * [-p]: The sale price in Solana (Ex. 10 SOL)
 * [-o]: The buyers wallet address
 * [-m]: The NFT's mint address
-* [-i]: The NFT image url
+* [-i]: The NFT image url (Not needed to display the NFT image)
 * [-s]: The source of the sale (Ex. magiceden_v2)
 * [-b]: The blockTime the transaction occured at (Ex. 21647306453)
 
