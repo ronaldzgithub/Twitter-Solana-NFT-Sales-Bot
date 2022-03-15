@@ -12,7 +12,7 @@
   - [Adding Credentials](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Adding-Credentials)
   - [Running](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Running-the-Bot)  
 - [Config (Customize)](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Config)
-- [Credit Not Needed](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Credit-Not-Needed)
+- [No Credit Needed](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#No-Credit-Needed)
 - [Find Me](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#find-me)
 - [Tip Jar](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Solana-Tip-Jar)
 
@@ -109,7 +109,7 @@ BOOM💥 SolGod #001 just sold for 50.24 SOL ($5000.37 USD)
 
 [[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use of this bot for your project is encouraged. **No credit is needed**. If you find this bot useful and insist on crediting the creator, please add @williamambrozic in the Bot's Twitter bio or simply have the bot follow @williamambrozic on Twitter. Thank you.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This bot is 100% free to use. Use of this bot for your project is encouraged. **No credit is needed**. If you find this bot useful and insist on crediting the creator, please add @williamambrozic in the Bot's Twitter bio or simply have the bot follow @williamambrozic on Twitter. Thank you.
 
 ## Find Me
 
