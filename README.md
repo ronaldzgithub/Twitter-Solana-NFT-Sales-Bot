@@ -70,7 +70,7 @@ The config file **./config/config.json** will look something like this:
 ```
 {
   "ME_symbol": "ADD_YOUR_SYMBOL_HERE",
-  "twtter_credentials": {
+  "twitter_credentials": {
     "bearer_token": "ADD_YOURS_HERE",
     "consumer_key": "ADD_YOURS_HERE",
     "consumer_secret": "ADD_YOURS_HERE",
