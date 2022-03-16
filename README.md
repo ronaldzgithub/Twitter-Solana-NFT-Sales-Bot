@@ -47,7 +47,9 @@ pip install -r requirements.txt
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B. Make sure your Twitter developer account has elevated access for image uploading [here](https://developer.twitter.com/en/portal/products/elevated).
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. Place your Twitter developer credentials in **./config/config.json** as seen [here](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Config).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. Make sure that the Access Token and Secret has been created with Read and Write permissions.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D. Place your Twitter developer credentials in **./config/config.json** as seen [here](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Config).
 
 ## Running the Bot
 
@@ -70,7 +72,7 @@ The config file **./config/config.json** will look something like this:
 ```
 {
   "ME_symbol": "ADD_YOUR_SYMBOL_HERE",
-  "twtter_credentials": {
+  "twitter_credentials": {
     "bearer_token": "ADD_YOURS_HERE",
     "consumer_key": "ADD_YOURS_HERE",
     "consumer_secret": "ADD_YOURS_HERE",
