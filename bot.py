@@ -15,16 +15,10 @@ config = json.load(conf)
 #List of supported currency
 supported_fiat = ["EUR", "USD", "CAD", "JPY", "GPB", "AUD", "CNY", "INR"]
 
-#If you are granted a higher TPS from MagicEden
-TPS = 2
-
-#NFTs called per API request (MAX 500)
-nfts_per_call = 500
-
 #This value is added to the delay in case MagicEden thinks we are cutting too close into their TPS
 #If you feel risky lower this value or make it 0
 safety_delay = 0.05
-delay = 1/TPS + safety_delay
+delay = (1/config['TPS']) + safety_delay
 
 client = tweepy.Client(bearer_token=config['twitter_credentials']['bearer_token'],
                        consumer_key=config['twitter_credentials']['consumer_key'],
@@ -42,9 +36,11 @@ api = tweepy.API(auth)
 
 ######################### FUNCTION DEFINITIONS #########################################
 
+#Returns a hasmap of the last buyNow activites from the last config['activities_per_call'] activites
 def initCollections():
+    #Hasmap: Activity Signature => Activity
     ret = {}
-    limit = nfts_per_call
+    limit = config['activities_per_call']
     url = "http://api-mainnet.magiceden.dev/v2/collections/" + config['ME_symbol'] + "/activities?offset=0&limit=" + str(limit)
     response = requests.request("GET", url, headers={}, data={}).json()
     for x in response:
@@ -58,6 +54,7 @@ def get_current_price(symbol):
     todays_data = ticker.history(period='1d')
     return todays_data['Close'][0]
 
+#Fetches metadata from mint address using the ME api
 def get_meta_from_mint(mint):
     import requests
     url = "http://api-mainnet.magiceden.dev/v2/tokens/" + mint
@@ -77,6 +74,7 @@ def convert_tweet(sale_data, meta):
     text = text.replace("[-b]", str(sale_data["blockTime"]))
     return text
 
+#Sends a tweet based on sale data and NFT metadata
 def send_tweet(api, client, sale_data, meta):
     image = requests.get(meta['image']).content
     with open('./tmp.png', 'wb') as handler:
@@ -95,25 +93,32 @@ if config['fiat_currency'] not in supported_fiat:
 #Getting initial state of sales
 activities = initCollections()
 
+#Getting the last blocktime to ensure no repeat NFTs are tweeted
+last_blockTime =  list(activities.values())[0]['blockTime'] if len(activities) > 0 else 0
 last_activities = activities
 
-print("LISTENING FOR " + config['ME_symbol'].upper() + " SALES")
+print(f"LISTENING FOR {config['ME_symbol'].upper()} SALES")
 
+#Bot loop
 while True:
+    #Getting hashmap
     try:
         activities = initCollections()
         time.sleep(delay)
     except:
         continue
 
+    #Checking all activities (by signature, key values)
     for activity in activities.keys():
-        if activity not in last_activities.keys():
+        #Checking if there is a new activity with a larger blockTime
+        if activity not in last_activities.keys() and activities[activity]['blockTime'] >= last_blockTime:
             try:
                 meta = get_meta_from_mint(activities[activity]['tokenMint'])
                 time.sleep(delay)
                 send_tweet(api, client, activities[activity], meta)
-                print("Tweeting: " + convert_tweet(activities[activity], meta))
+                print(f"Tweeting: {convert_tweet(activities[activity], meta)}")
             except:
-                print("ERROR: with NFT that Sold for " + str(activities[activity]['price']) + " Not Tweeted")
+                print(f"ERROR: with NFT that Sold for {str(activities[activity]['price'])} Not Tweeted")
 
+    last_blockTime =  list(activities.values())[0]['blockTime'] if len(activities) > 0 else 0
     last_activities = dict(activities)
