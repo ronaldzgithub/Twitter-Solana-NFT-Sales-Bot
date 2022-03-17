@@ -80,8 +80,11 @@ The config file **./config/config.json** will look something like this:
     "access_token_secret": "ADD_YOURS_HERE"
   },
   "tweet_text": "BOOM💥 [-n] just sold for [-p] ([-f])",
-  "fiat_currency": "USD"
+  "fiat_currency": "USD",
+  "TPS": 2,
+  "activities_per_call": 500
 }
+
 ```
 
 ### Optional Attributes
