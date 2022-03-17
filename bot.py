@@ -43,10 +43,14 @@ api = tweepy.API(auth)
 ######################### FUNCTION DEFINITIONS #########################################
 
 def initCollections():
+    ret = {}
     limit = nfts_per_call
     url = "http://api-mainnet.magiceden.dev/v2/collections/" + config['ME_symbol'] + "/activities?offset=0&limit=" + str(limit)
     response = requests.request("GET", url, headers={}, data={}).json()
-    return response
+    for x in response:
+        if x['type'] == 'buyNow':
+            ret[x['signature']] = x
+    return ret
 
 #Fetches the latest Solana price in selected currency
 def get_current_price(symbol):
@@ -81,6 +85,7 @@ def send_tweet(api, client, sale_data, meta):
     client.create_tweet(text=convert_tweet(sale_data, meta), media_ids=[mediaID.media_id])
 
 
+
 ######################### DRIVER CODE #########################################
 
 #Checking valid currency
@@ -89,7 +94,8 @@ if config['fiat_currency'] not in supported_fiat:
 
 #Getting initial state of sales
 activities = initCollections()
-last_sale = activities[0]
+
+last_activities = activities
 
 print("LISTENING FOR " + config['ME_symbol'].upper() + " SALES")
 
@@ -100,23 +106,14 @@ while True:
     except:
         continue
 
-    count = 0
-
-    #Checking for all activity since last activity
-    while True:
-        sale = activities[count]
-        count += 1
-
-        if sale['signature'] == last_sale['signature'] or count == len(activities):
-            break
-
-        if sale['type'] == "buyNow":
+    for activity in activities.keys():
+        if activity not in last_activities.keys():
             try:
-                meta = get_meta_from_mint(sale['tokenMint'])
+                meta = get_meta_from_mint(activities[activity]['tokenMint'])
                 time.sleep(delay)
-                send_tweet(api, client, sale, meta)
-                print("Tweeting: " + convert_tweet(sale, meta))
+                send_tweet(api, client, activities[activity], meta)
+                print("Tweeting: " + convert_tweet(activities[activity], meta))
             except:
-                print("ERROR: with NFT that Sold for " + str(sale['price']) + " Not Tweeted")
+                print("ERROR: with NFT that Sold for " + str(activities[activity]['price']) + " Not Tweeted")
 
-    last_sale = activities[0]
+    last_activities = dict(activities)
