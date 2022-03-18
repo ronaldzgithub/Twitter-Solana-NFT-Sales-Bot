@@ -1,4 +1,4 @@
-# Responsive-Solana-Sales-Bot (UNDER CONSTRUCTION - USE WITH CAUTION)
+# Responsive-Solana-Sales-Bot
 
 **Currently testing at (Example):** https://twitter.com/TestSalesBot
 
