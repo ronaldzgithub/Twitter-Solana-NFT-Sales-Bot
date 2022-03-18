@@ -5,6 +5,8 @@ import tweepy
 import yfinance as yf
 import os.path
 from os import path
+from PIL import Image
+import PIL
 
 ######################### GLOBAL DEFINITIONS #########################################
 
@@ -19,6 +21,9 @@ supported_fiat = ["EUR", "USD", "CAD", "JPY", "GPB", "AUD", "CNY", "INR"]
 #If you feel risky lower this value or make it 0
 safety_delay = 0.05
 delay = (1/config['TPS']) + safety_delay
+
+#MAX TWEEPY IMAGE SIZE
+COMP_SIZE = 3072000
 
 client = tweepy.Client(bearer_token=config['twitter_credentials']['bearer_token'],
                        consumer_key=config['twitter_credentials']['consumer_key'],
@@ -74,12 +79,27 @@ def convert_tweet(sale_data, meta):
     text = text.replace("[-b]", str(sale_data["blockTime"]))
     return text
 
+def compress(filename):
+    picture = Image.open(filename)
+    size = os.stat(filename).st_size
+
+    while size > COMP_SIZE:
+        picture = picture.resize((int(picture.size[0]/2), int(picture.size[0]/2)))
+        size = os.stat(filename).st_size
+        if size > COMP_SIZE:
+            break;
+        picture.save(filename,optimize=True,quality=65)
+        size = os.stat(filename).st_size
+
 #Sends a tweet based on sale data and NFT metadata
 def send_tweet(api, client, sale_data, meta):
     image = requests.get(meta['image']).content
-    with open('./tmp.png', 'wb') as handler:
+    ext = meta['image'].split('?')[-1].split('=')[-1]
+    filename = './tmp.' + ext
+    with open(filename, 'wb') as handler:
         handler.write(image)
-    mediaID = api.media_upload("tmp.png")
+    compress(filename)
+    mediaID = api.media_upload(filename)
     client.create_tweet(text=convert_tweet(sale_data, meta), media_ids=[mediaID.media_id])
 
 
