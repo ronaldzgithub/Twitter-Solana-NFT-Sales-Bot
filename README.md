@@ -1,6 +1,6 @@
 # Responsive-Solana-Sales-Bot
 
-**Currently testing at (Example):** https://twitter.com/TestSalesBot
+**Core code used in (demo):** https://twitter.com/TopFiveRarity
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This bot allows for **custom tweet text** and **fast response times**. The bot utilizes MagicEden's ```GET/collections/:symbol/activities``` API call, responding to sales in **less than a minute** while allowing for NFT image uploading and metadata access through MagicEden's API. This bot is designed to run on an external server.
 
