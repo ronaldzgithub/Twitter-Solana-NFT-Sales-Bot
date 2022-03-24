@@ -89,7 +89,7 @@ The config file **./config/config.json** will look something like this:
 
 ### Optional Attributes
 **tweet_text**: You can customize the text that is tweeted out with the NFT image. Tweet text follows this notation (the bot will replace the following syntax with ...):
-* [-n]: The NFT name (Ex. SolGod #0001)
+* [-n]: The NFT name (Ex. SolGod 0001)
 * [-f]: The fiat price with respect to the fiat_currency value described below (Ex. $199.19 USD)
 * [-p]: The sale price in Solana (Ex. 10 SOL)
 * [-o]: The buyers wallet address
