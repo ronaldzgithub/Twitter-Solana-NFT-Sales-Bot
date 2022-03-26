@@ -1,4 +1,4 @@
-# Responsive-Solana-Sales-Bot
+# Twitter-Solana-Sales-Bot
 
 **Core code used in (demo):** https://twitter.com/ThreeRarity
 
