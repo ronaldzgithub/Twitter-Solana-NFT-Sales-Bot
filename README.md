@@ -2,7 +2,7 @@
 
 **Core code used in (demo):** https://twitter.com/ThreeRarity
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This bot allows for **custom tweet text** and **fast response times**. The bot utilizes MagicEden's ```GET/collections/:symbol/activities``` API call, responding to sales in **less than a minute** while allowing for NFT image uploading and metadata access through MagicEden's API. This bot is designed to run on an external server.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This bot allows for custom tweet text and fast response times. The bot utilizes MagicEden's ```GET/collections/:symbol/activities``` API call, responding to sales in less than a minute while allowing for NFT image uploading and metadata access through MagicEden's API. This bot is designed to run on an external server.
 
 **Note: this bot was tested on a [Raspberry Pi 4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) and an internet connection** - ($35 USD and under Approx.). All else was free (Twitter access). Usable on Windows/Unix based servers.
 
