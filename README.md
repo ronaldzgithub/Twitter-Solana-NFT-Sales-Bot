@@ -97,7 +97,7 @@ The config file **./config/config.json** will look something like this:
 * [-f]: The fiat price with respect to the fiat_currency value described below (Ex. $199.19 USD)
 * [-p]: The sale price in Solana (Ex. 10 SOL)
 * [-o]: The buyers wallet address
-* [-m]: The NFT's mint address
+* [-m]: The NFT's mint address (This can easily be appended to a MagicEden item link to get the sale link as seen in the demo like so: https://magiceden.io/item-details/[-m])
 * [-i]: The NFT image url (Not needed to display the NFT image)
 * [-s]: The source of the sale (Ex. magiceden_v2)
 * [-b]: The blockTime the transaction occured at (Ex. 21647306453)
