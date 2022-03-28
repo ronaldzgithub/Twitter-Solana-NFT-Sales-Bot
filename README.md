@@ -8,7 +8,7 @@
 
 ## demo 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The demo bot found [here](https://twitter.com/ThreeRarity) uses the core code and extends on it by implementing the HowRare API for rarity and attributes. This bot also loops through multiple collections, as of right now this code is designed to run one collection at a time (though you could have multiple bots running this code).
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The demo bot found [here](https://twitter.com/ThreeRarity) uses the core code and extends on it by implementing the HowRare API for rarity and attributes. The demo bot also loops through multiple collections, the code in this repo is designed to run one collection at a time (though you could have multiple bots running this code, or modify the code as the demo did).
 
 ## Contents
 - [Setup](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Setup)  
