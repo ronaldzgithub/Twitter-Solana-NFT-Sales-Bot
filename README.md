@@ -1,6 +1,7 @@
 # Twitter-Solana-Sales-Bot
 
-**Core code used in (demo):** https://twitter.com/ThreeRarity
+**demo:** https://twitter.com/ThreeRarity
+* Uses the core code; however, this bot implements the HowRare API for rarity and attributes. This bot also loops through many collections. This code is meant for one collection.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This bot allows for custom tweet text and fast response times. The bot utilizes MagicEden's ```GET/collections/:symbol/activities``` API call, responding to sales in less than a minute while allowing for NFT image uploading and metadata access through MagicEden's API. This bot is designed to run on an external server.
 
