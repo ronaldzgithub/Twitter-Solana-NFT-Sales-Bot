@@ -37,7 +37,7 @@ api = tweepy.API(auth)
 ######################### FUNCTION DEFINITIONS #########################################
 
 #Returns a hasmap of the last buyNow activites from the last config['activities_per_call'] activites
-def initCollections():
+def init_collections():
     #Hasmap: Activity Signature => Activity
     ret = {}
     limit = config['activities_per_call']
@@ -91,7 +91,7 @@ if config['fiat_currency'] not in supported_fiat:
     print("INVALID FIAT_CURRENCY: CHECK CONFIG")
 
 #Getting initial state of sales
-activities = initCollections()
+activities = init_collections()
 
 #Getting the last blocktime to ensure no repeat NFTs are tweeted
 last_blockTime =  list(activities.values())[0]['blockTime'] if len(activities) > 0 else 0
@@ -103,7 +103,7 @@ print(f"LISTENING FOR {config['ME_symbol'].upper()} SALES")
 while True:
     #Getting hashmap
     try:
-        activities = initCollections()
+        activities = init_collections()
         time.sleep(delay)
     except:
         continue
