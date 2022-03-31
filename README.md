@@ -2,15 +2,14 @@
 
 ## Preface
 
+[[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This bot allows for custom tweet text and fast response times. The bot utilizes MagicEden's ```GET/collections/:symbol/activities``` API call, responding to sales in less than a minute while allowing for NFT image uploading and metadata access through MagicEden's API. This bot is designed to run on an external server.
 
 **Note: this bot was tested on a [Raspberry Pi 4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) and an internet connection** - ($35 USD and under Approx.). All else was free (Twitter access). Usable on Windows/Unix based servers.
 
-## demo 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The demo bot found [here](https://twitter.com/ThreeRarity) uses the core code and extends on it by implementing the HowRare API for rarity and attributes. The demo bot also loops through multiple collections, the code in this repo is designed to run one collection at a time (though you could have multiple bots running this code, or modify the code as the demo did).
-
 ## Contents
+- [Demo](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Demo)  
 - [Setup](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Setup)  
   - [Installing](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Installing-the-Bot) 
   - [Adding Credentials](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Adding-Credentials)
@@ -19,6 +18,13 @@
 - [Free Use](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Free-Use)
 - [Find Me](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#find-me)
 - [Tip Jar](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Solana-Tip-Jar)
+
+## Demo & examples
+
+[[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
+
+* Used by [BR1SALESBOT](https://twitter.com/BR1SALESBOT)
+* Used by [ThreeRarity](https://twitter.com/ThreeRarity) (uses the core code and extends on it by implementing the HowRare API for rarity and attributes)
 
 ## Setup
 
