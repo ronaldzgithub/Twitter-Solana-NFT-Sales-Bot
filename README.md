@@ -9,7 +9,7 @@
 **Note: this bot was tested on a [Raspberry Pi 4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) and an internet connection** - ($35 USD and under Approx.). All else was free (Twitter access). Usable on Windows/Unix based servers.
 
 ## Contents
-- [Demo](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Demo-&-Examples)  
+- [Demo](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Demo)  
 - [Setup](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Setup)  
   - [Installing](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Installing-the-Bot) 
   - [Adding Credentials](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Adding-Credentials)
@@ -19,7 +19,7 @@
 - [Find Me](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#find-me)
 - [Tip Jar](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#Solana-Tip-Jar)
 
-## Demo & Examples
+## Demo
 
 [[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
 
