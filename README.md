@@ -24,7 +24,7 @@
 [[Back to contents]](https://github.com/WilliamAmbrozic/Responsive-Solana-NFT-Sales-Bot#contents)
 
 * Used by [BR1SALESBOT](https://twitter.com/BR1SALESBOT)
-* Used by [ThreeRarity](https://twitter.com/ThreeRarity) (uses the core code and extends on it by implementing the HowRare API for rarity and attributes)
+* Used by [ThreeRarity](https://twitter.com/ThreeRarity) (I used the core code and extended on it by implementing the HowRare API for rarity and attributes)
 
 ## Setup
 
